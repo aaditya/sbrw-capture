@@ -1,0 +1,19 @@
+Protocol : 
+--------- 
+GET
+ --------- 
+Body Output : 
+--------- 
+{"messageSrv":"Invite-based Russian server","homePageUrl":"http://world-evolved.ru","facebookUrl":"Your facebook page url","discordUrl":"https://discord.gg/8cwZZqg","serverName":"World Evolved RU","country":"RU","timezone":0,"bannerUrl":"https://i.imgur.com/oDTilm0.png","adminList":"Hypercycle and WEvolved Team","ownerList":"Hypercycle","numberOfRegistered":34087,"allowedCountries":"","newsUrl":null,"activatedHolidaySceneryGroups":["SCENERY_GROUP_CHRISTMAS"],"disactivatedHolidaySceneryGroups":["SCENERY_GROUP_CHRISTMAS_DISABLE"],"onlineNumber":259,"requireTicket":false,"serverVersion":"0.0.7","maxOnlinePlayers":450}
+ --------- 
+Query String : 
+--------- 
+{}
+ --------- 
+Headers : 
+--------- 
+{"user-agent":"GameLauncher (+https://github.com/SoapboxRaceWorld/GameLauncher_NFSW)","x-hwid":"949FF29EF3E87368AE811FEF162A72B5A75B7A76","x-useragent":"GameLauncherReborn 2.0.2.1 WinForms (+https://github.com/SoapboxRaceWorld/GameLauncher_NFSW)","x-gamelauncherhash":"954A8695E822FEED4D2AC1ED3D266F570DE0134C","host":"192.168.1.2:8680","connection":"Keep-Alive"}
+ --------- 
+Full URL : 
+/soapbox-race-core/Engine.svc/GetServerInformation
+ --------- 

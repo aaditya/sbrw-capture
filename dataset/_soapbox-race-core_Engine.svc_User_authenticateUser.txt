@@ -1,0 +1,23 @@
+Protocol : 
+--------- 
+GET
+ --------- 
+Body Output : 
+--------- 
+<LoginStatusVO>
+    <UserId>26083</UserId>
+    <LoginToken>3e5a94f4-d8f9-4cea-b4d1-fbef4914eb3c</LoginToken>
+    <Description></Description>
+</LoginStatusVO>
+ --------- 
+Query String : 
+--------- 
+{"email":"ac36500@gmail.com","password":"e434f2910b2143e2730b3c30efdef8eb6b945cec"}
+ --------- 
+Headers : 
+--------- 
+{"user-agent":"GameLauncher (+https://github.com/SoapboxRaceWorld/GameLauncher_NFSW)","x-hwid":"949FF29EF3E87368AE811FEF162A72B5A75B7A76","x-useragent":"GameLauncherReborn 2.0.2.1 WinForms (+https://github.com/SoapboxRaceWorld/GameLauncher_NFSW)","x-gamelauncherhash":"954A8695E822FEED4D2AC1ED3D266F570DE0134C","host":"192.168.1.2:8680"}
+ --------- 
+Full URL : 
+/soapbox-race-core/Engine.svc/User/authenticateUser?email=ac36500@gmail.com&password=e434f2910b2143e2730b3c30efdef8eb6b945cec
+ --------- 
