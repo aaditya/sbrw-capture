@@ -3,7 +3,7 @@ const app = express();
 const request = require('request');
 const morgan = require('morgan');
 
-const base_server = 'http://200.98.139.241:8680'
+const base_server = 'http://145.239.5.103:8680'
 
 const middleParser = require('./parser');
 
@@ -11,16 +11,10 @@ app.use(morgan('dev'));
 
 app.use((req, res) => {
     let url = base_server + req.originalUrl;
-    if (req.method == 'GET') {
-        request.get(url, { headers: req.headers }, (err, resp, body) => {
-            middleParser(err, req, body, res);
-        });
-    }
-    else if (req.method == 'POST') {
-        request.post(url, { headers: req.headers }, (err, resp, body) => {
-            middleParser(err, req, body, res);
-        });
-    }
+    delete req.headers['accept-encoding'];
+    request({ url: url, method: req.method, headers: req.headers, body: req.body }, (err, response, body) => {
+        middleParser(err, req, body, res);
+    });
 });
 
 module.exports = app;
