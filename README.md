@@ -1,4 +1,4 @@
-# NFSW MiddleParser
+# SBRW MiddleParser
 
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/aadityachakravarty/sbrw-server/graphs/commit-activity) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/racesphere/sbrw-middleparser/blob/master/LICENSE)
 
