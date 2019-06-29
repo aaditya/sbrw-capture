@@ -5,7 +5,9 @@ const app = express();
 const requestHTTP = require('request');
 const morgan = require('morgan');
 
-const base_server = 'http://145.239.5.103:8680'
+const config = require('./system/config.json');
+
+const base_server = config.url;
 
 const middleParser = require('./parser');
 

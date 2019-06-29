@@ -20,7 +20,7 @@ Also, this server basically sends over all data and headers etc to a functioning
 
 * cd sbrw-middleparser
 
-* open config.json, modify the "ip" field if you really need to change the defaults.
+* open system/config.json, modify the "url" field if you really need to change the defaults.
 
 * npm i
 
