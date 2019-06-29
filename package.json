@@ -1,18 +1,19 @@
 {
   "name": "sbrw-parser",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "description": "This is the API parser for sbrw-server upon which new server is based.",
   "main": "system/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node system/server"
   },
   "author": "Aaditya Chakravarty",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "express": "^4.16.4",
     "morgan": "^1.9.1",
     "request": "^2.88.0",
-    "zlib": "^1.0.5"
+    "uuid": "^3.3.2",
+    "xml2js": "^0.4.19"
   }
 }
