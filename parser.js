@@ -1,51 +1,38 @@
 const fs = require('fs');
-const uuidv1 = require('uuid/v1');
+const path = require('path');
 
-const uuid = uuidv1();
+const stampInitial = new Date().getTime();
+const stampDateStr = new Date().toDateString();
 
-const middleParser = (err, req, body, res) => {
-    if (err) {
-        res.json({
-            success: false,
-            msg: err.message
-        });
-    }
-    else {
-        if (req.originalUrl != '/favicon.ico') {
-            let fname;
-            if (req.originalUrl.indexOf('?') == -1) {
-                fname = req.originalUrl.split('/').join('_');
-            }
-            else {
-                let file = req.originalUrl.split('?')[0];
-                fname = file.split('/').join('_');
-            }
+const middleParser = (req, body) => {
+  if (req.originalUrl === '/favicon.ico') return;
 
-            let name = fname.split('_').filter((i, index) => index > 2).join('_');
+  let fname;
+  if (req.originalUrl.indexOf('?') == -1) {
+    fname = req.originalUrl.split('/').join('_');
+  } else {
+    let file = req.originalUrl.split('?')[0];
+    fname = file.split('/').join('_');
+  }
 
-            let stamp = new Date().getTime();
+  let stamp = new Date().getTime();
 
-            let dir = "dataset/" + uuid;
+  let dir = path.join(__dirname, "dataset/", `${stampDateStr}_${stampInitial}`);
+  let filename = `${stamp}_${fname}.json`;
 
-            if (!fs.existsSync(dir)) {
-                fs.mkdirSync(dir);
-            }
+  if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
 
-            let fstream = fs.createWriteStream(dir + "/" + stamp + '_' + name + ".json");
-            let data = {
-                "Protocol": req.method,
-                "Output": body,
-                "Body": req.body,
-                "Raw": req.rawBody,
-                "Queries": req.query,
-                "Headers": req.headers,
-                "URL": req.originalUrl
-            }
-            fstream.write(JSON.stringify(data, null, 4));
-            fstream.end();
-        }
-        res.type('application/xml').send(body);
-    }
+  let data = {
+    "method": req.method,
+    "response": body,
+    "body-parsed": req.body,
+    "body": req.rawBody,
+    "query-string": req.query,
+    "headers": req.headers,
+    "url": req.originalUrl
+  }
+
+  fs.writeFileSync(path.join(dir, filename), JSON.stringify(data, null, 4));
 }
 
 module.exports = middleParser;

@@ -1,6 +1,6 @@
-# SBRW MiddleParser
+# SBRW Capture
 
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/aadityachakravarty/sbrw-server/graphs/commit-activity) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/racesphere/sbrw-middleparser/blob/master/LICENSE)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/aaditya/sbrw-capture/graphs/commit-activity) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/aaditya/sbrw-capture/blob/master/LICENSE)
 
 Basically, what this does is that it accepts all incoming requests and all parameters and the corresponding outputs and then stores them in a JSON file to check on. The files are marked with a timestamp to notify about the hit time, and stores unparsed text too.
 
@@ -12,25 +12,25 @@ Also, this server basically sends over all data and headers etc to a functioning
 
 ## Requirements
 
-* NodeJS. That's basically it.
+* NodeJS
 
 ## Installation and Running
 
-* git clone
+* Clone this repository.
 
-* cd sbrw-middleparser
+* `cd sbrw-capture`
 
-* open system/config.json, modify the "url" field if you really need to change the defaults.
+* open `config.json`, modify the `url` field if you really need to change the defaults.
 
-* npm i
+* `npm i`
 
-* npm start
+* `npm start`
 
 * Open SBRW launcher
 
 * Click on Add server
 
-* In the dialog, Add "http://127.0.0.1:8680" (without quotes)
+* In the dialog, Add `http://127.0.0.1:8080`
 
 * Restart launcher
 

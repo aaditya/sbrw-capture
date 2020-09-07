@@ -1,10 +1,10 @@
 {
   "name": "sbrw-parser",
-  "version": "0.3.0",
-  "description": "This is the API parser for sbrw-server upon which new server is based.",
-  "main": "system/server.js",
+  "version": "0.4.0",
+  "description": "Response capture system for sbrw-server.",
+  "main": "index.js",
   "scripts": {
-    "start": "node system/server"
+    "start": "node index.js"
   },
   "author": "Aaditya Chakravarty",
   "license": "MIT",
@@ -13,7 +13,6 @@
     "express": "^4.16.4",
     "morgan": "^1.9.1",
     "request": "^2.88.0",
-    "uuid": "^3.3.2",
-    "xml2js": "^0.4.19"
+    "xml2js": "^0.4.23"
   }
 }
