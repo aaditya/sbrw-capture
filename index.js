@@ -6,18 +6,26 @@ const request = require('request');
 const config = require('./config.json');
 const middleParser = require('./parser');
 
-require('./utils/xml')(bodyParser);
+require('body-parser-xml')(bodyParser);
 
 const app = express();
 
 app.use(bodyParser.json());
-app.use(bodyParser.xml());
 app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use(bodyParser.xml({
+  verify: function (req, res, buf, encoding) {
+    if (buf && buf.length) {
+      // Store the raw XML
+      req.rawBody = buf.toString(encoding || 'utf8');
+    }
+  }
+}));
 
 app.use(morgan('dev'));
 
 app.use((req, res) => {
-  const baseServer = config.url.ref;
+  const baseServer = config.url[process.argv[2]] || config.url.ref;
   const endpoint = req.originalUrl.replace('//', '/');
   const url = baseServer + endpoint;
   delete req.headers['accept-encoding'];

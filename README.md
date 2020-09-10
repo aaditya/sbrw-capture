@@ -33,7 +33,3 @@ Right now, the server is configured to hit the WorldUnited.gg game server as ref
 * Select the added server
 
 * Play as normal.
-
-## Credits
-
-* [Body-Parser-XML](https://www.npmjs.com/package/body-parser-xml)

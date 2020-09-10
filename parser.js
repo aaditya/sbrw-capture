@@ -17,7 +17,7 @@ const middleParser = (req, body) => {
 
   let stamp = new Date().getTime();
 
-  let dir = path.join(__dirname, "dataset/", `${stampDateStr}_${stampInitial}`);
+  let dir = path.join(__dirname, "dataset/", `${stampInitial}_${stampDateStr}`);
   let filename = `${stamp}_${fname}.json`;
 
   if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
